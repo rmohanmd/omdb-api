@@ -1,3 +1,7 @@
+let search = document.querySelector(".search");
+let button = document.querySelector(".button");
+
+button.addEventListener("click", getFetch);
 function getFetch() {
   //obtain your own personal api key from omdbapi.com
   //create a javascript file in the js folder named apikey.js
