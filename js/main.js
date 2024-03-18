@@ -7,7 +7,7 @@ function getFetch() {
   //create a javascript file in the js folder named apikey.js
   //in the apikey.js file create a const OMDB_API_Key=""
   //place your key between the quotes.
-  fetch(`http://www.omdbapi.com/?apikey=${OMDB_API_KEY}&s=muppets`)
+  fetch(`http://www.omdbapi.com/?apikey=${OMDB_API_KEY}&s=${search.value}`)
     .then((res) => res.json()) // parse response as JSON
     .then((data) => {
       console.log(data);
