@@ -2,7 +2,10 @@ const search = document.querySelector(".search");
 const button = document.querySelector(".button");
 
 const title = document.querySelector(".title");
-let img = document.querySelector(".poster");
+const img = document.querySelector(".poster");
+const scroll = document.querySelector(".scroll");
+const index = document.querySelector(".index");
+let displayCount;
 
 button.addEventListener("click", getFetch);
 function getFetch() {
@@ -13,6 +16,7 @@ function getFetch() {
   fetch(`http://www.omdbapi.com/?apikey=${OMDB_API_KEY}&s=${search.value}`)
     .then((res) => res.json()) // parse response as JSON
     .then((data) => {
+      displayCount = 0;
       display(data.Search);
     })
     .catch((err) => {
@@ -21,6 +25,8 @@ function getFetch() {
 }
 
 function display(movieData) {
-  title.innerHTML = `${movieData[0].Title} (${movieData[0].Year})`;
-  img.src = movieData[0].Poster;
+  title.innerHTML = `${movieData[displayCount].Title} (${movieData[displayCount].Year})`;
+  img.src = movieData[displayCount].Poster;
+  scroll.style.display = "";
+  index.textContent = `${displayCount + 1}/${movieData.length}`;
 }
