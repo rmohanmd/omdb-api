@@ -23,7 +23,7 @@
 }
 .poster {
   padding-top: 15px;
-  max-width: 300px;
+  max-height: 400px;
 }
 .scroll {
   display: flex;
@@ -34,12 +34,14 @@ h2 {
   font-size: 2rem;
   padding: 5px;
 }
-span {
+.arrow {
   font-size: 3rem;
   font-weight: bolder;
   padding: 5px;
 }
-
+.pointer {
+  cursor: pointer;
+}
 /******************************************
 /* ADDITIONAL STYLES
 /*******************************************/
